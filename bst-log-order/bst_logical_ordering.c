@@ -261,8 +261,8 @@ static void removeFromTree(bst_node_t *node, int hasTwoChildren, bst_node_t *par
 		}
 
 		node_to_delete = node;
-		pthread_spin_unlock(&node->treeLock);
 		pthread_spin_unlock(&parent->treeLock);
+		pthread_spin_unlock(&node->treeLock);
 		if(child != NULL)
 			pthread_spin_unlock(&child->treeLock);
 		return;
