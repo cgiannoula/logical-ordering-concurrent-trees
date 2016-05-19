@@ -1,10 +1,10 @@
 #include <pthread.h> //> pthread_spinlock_t
 #include <limits.h>
 
-#include "arch.h" /* CACHE_LINE_SIZE */
 #include "alloc.h"
 
 #define MINVAL -999999
+#define CACHE_LINE_SIZE 64
 
 typedef struct bst_node {
 	int key;
