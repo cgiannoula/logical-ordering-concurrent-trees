@@ -213,8 +213,8 @@ static int acquireTreeLocks(bst_node_t *node)
 				continue;
 			}
 			if(parent != s->parent || parent->valid == 0){
-				pthread_spin_unlock(&parent->treeLock);
 				pthread_spin_unlock(&node->treeLock);
+				pthread_spin_unlock(&parent->treeLock);
 				continue;
 			}
 		}
